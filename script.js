@@ -14,11 +14,11 @@ function hoverEvent(){
 
     items.forEach((item) => {
         item.addEventListener("mouseover", function(e) {
-            item.setAttribute("style", "background-color: #ddd");
+            item.setAttribute("style", "background-color: black");
         });
-        item.addEventListener("mouseout", function(e) {
+        /*item.addEventListener("mouseout", function(e) {
             item.setAttribute("style", "background-color: white");
-        });
+        });*/
     });
 }
 
@@ -46,6 +46,7 @@ function resizeGrid(size){
 const container = document.getElementById("gridcontainer");
 let rows = 16;
 let cols = 16;
+let hoverAble = true;
 
 makeRows(rows, cols);
 hoverEvent();
