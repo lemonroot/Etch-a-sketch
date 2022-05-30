@@ -1,6 +1,4 @@
 
-const container = document.getElementById("gridcontainer");
-
 function makeRows(rows, cols){
     container.style.setProperty("--grid-rows", rows);
     container.style.setProperty("--grid-cols", cols);
@@ -42,10 +40,13 @@ function resizeGrid(size){
         cell.remove();
     });
     makeRows(size, size);
+    hoverEvent();
 }
 
+const container = document.getElementById("gridcontainer");
 let rows = 16;
 let cols = 16;
+
 makeRows(rows, cols);
 hoverEvent();
 sizeButton();
