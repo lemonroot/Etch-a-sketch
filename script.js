@@ -16,7 +16,7 @@ function hoverEvent(){
 
     items.forEach((item) => {
         item.addEventListener("mouseover", function(e) {
-            item.setAttribute("style", "background-color: gray");
+            item.setAttribute("style", "background-color: #ddd");
         });
         item.addEventListener("mouseout", function(e) {
             item.setAttribute("style", "background-color: white");
@@ -24,5 +24,28 @@ function hoverEvent(){
     });
 }
 
-makeRows(16,16);
+function sizeButton(){
+    let size;
+    const button = document.getElementById("size");
+
+    button.addEventListener("click", function(e) {
+        size = prompt("Please input a number from 4-100.");
+        if(size < 10 || size > 100){
+            alert("Invalid size!");
+        } else{resizeGrid(size)};
+    });
+}
+
+function resizeGrid(size){
+    const cells = document.querySelectorAll(".grid-item");
+    cells.forEach(cell => {
+        cell.remove();
+    });
+    makeRows(size, size);
+}
+
+let rows = 16;
+let cols = 16;
+makeRows(rows, cols);
 hoverEvent();
+sizeButton();

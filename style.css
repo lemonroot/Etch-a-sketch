@@ -4,13 +4,15 @@
   }
 
   #container {
-      width: 500px;
-      height: 500px;
+      width: 600px;
+      height: 600px;
   }
   
   #gridcontainer {
     display: grid;
-    aspect-ratio: 1;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    width: 100%;
+    height: 100%;
     grid-template-rows: repeat(var(--grid-rows), 1fr);
     grid-template-columns: repeat(var(--grid-cols), 1fr);
   }
@@ -19,4 +21,9 @@
     padding: 0em;
     border: 1px solid #ddd;
     text-align: center;
+  }
+
+  #size {
+    margin-bottom: 10px;
+    align-self: center;
   }
