@@ -2,15 +2,21 @@
     --grid-cols: 1;
     --grid-rows: 1;
   }
-  
+
   #container {
+      width: 500px;
+      height: 500px;
+  }
+  
+  #gridcontainer {
     display: grid;
+    aspect-ratio: 1;
     grid-template-rows: repeat(var(--grid-rows), 1fr);
     grid-template-columns: repeat(var(--grid-cols), 1fr);
   }
   
   .grid-item {
-    padding: 1em;
+    padding: 0em;
     border: 1px solid #ddd;
     text-align: center;
   }
